@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0572283b45.js"></script>
+    <style type="text/css">
+      nav {
+        background-color: #BF0A0A;
+        color: white;
+      }
+      .fsec {
+        background-color: #FCFCFC;
+      }
+      .fsec h1 {
+        color: #4F5AEA;
+      }
+      .fsec h4 {
+        color: #636E72;
+      }
+      .ssec {
+        background-color: #EEEEEE;
+      }
+      .btn {
+        font-size: 200%;
+        font-family: 'Oswald', sans-serif;
+        white-space: normal;
+      }
+    </style>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+      $.ajax({
+        url: "https://geolocation-db.com/jsonp",
+        jsonpCallback: "callback",
+        dataType: "jsonp",
+        success: function (location) {
+          var data = new Date(),
+            dia = data.getDate().toString().padStart(2, '0'),
+            mes = (data.getMonth() + 1).toString().padStart(2, '0'), //+1 pois no getMonth Janeiro começa com zero.
+            ano = data.getFullYear();
+          
+          data = dia + '/' + mes + '/' + ano;
+
+          //AQUI altera o texto ANTES do nome da cidade
+          textoAntesCidade = 'Você e algumas pessoas próximo a ';
+          //AQUI altera o texto DEPOIS do nome da cidade
+          textoDepoisCidade = ' foram selecionadas para ver este vídeo até o dia ';
+
+          mostrarData = true; //SE não quiser que a data apareça é só mudar o valor 'true' para 'false' e vice-versa para mostrar novamente 
+          
+          if(location.city)
+            $('#container-cidade').html(textoAntesCidade + location.city + textoDepoisCidade + (mostrarData ? data : ''));
+        }
+      });
+
+  </script>
+  <style>
+    #container-cidade {
+      padding: 1rem;
+      width: 100%;
+    
+      /* AQUI altera a cor da letra */
+      color: #FFFFFF;
+      display: inline-table;
+      /* AQUI altera o tamanho da letra */
+      font-size: 15px;
+      /* AQUI altera a altura da caixa */
+      height: 13px;
+      z-index: 1;
+      position: inherit;
+      top: 0;
+      left: 0;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-align: center;
+    }
+  </style>
+</head>
+
+
+
+  </head>
+  <body>
+    
+   <nav class="navbar justify-content-center text-center">
+      <span class="lead">
+        <div id="container-cidade">Aguarde um momento...</div>
+    </nav>
+
+    <!--<section class="py-5 fsec">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <h1>"Mistura de 4 Ingredientes <b>ACELEROU</b> meu Metabolismo</h1>
+            <h4>Eu Faço Em Casa e Agora Me Sinto Melhor"</h4>
+          </div>
+        </div>
+      </div>
+    </section>-->
+
+    <section class="py-5 ssec">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <script type="text/javascript" id="scr_62961cc4cb51ac0009a5e14a">var s=document.createElement("script");s.src="https://scripts.converteai.net/1c995eb4-4193-41c9-a9a1-c16ee42a6d24/players/62961cc4cb51ac0009a5e14a/player.js",s.async=!0,document.head.appendChild(s);</script>
+            <!-- TROQUE SEU LINK ONDE ESTÁ O DO PROTOCOLOZEROBARRIGA.COM, MANTENDO AS ASPAS -->
+            <!--<a class="btn btn-success btn-lg p-4 mt-5" href="https://bemquemefaz.online/p-01/">QUERO ASSISIR O VÍDEO AGORA!</a>-->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-4 bg-dark text-white">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col text-center">
+            <a href="https://protocolozerobarriga.com/termos" class="text-white font-weight-bold">Termos de Uso</a> | <a href="https://protocolozerobarriga.com/privacidade" class="text-white font-weight-bold">Política de Privacidade</a>
+            <p class="font-weight-bold">Copyright 2022 - Todos os Direitos Reservados</p>
+            <p>Este site não faz parte do site do Facebook ou Facebook Inc. Além disso,</p>
+            <p class="mb-0">Este site NÃO é endossado pelo Facebook de forma alguma. FACEBOOK é uma marca registrada da FACEBOOK, Inc.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+      monName = new Array ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro")
+
+      var data = new Date();
+      var dia = data.getDate();
+      var mes = monName[data.getMonth()];
+
+      document.getElementById("dia").innerHTML = dia
+      document.getElementById("mes").innerHTML = mes
+    </script>
+  </body>
+</html>
